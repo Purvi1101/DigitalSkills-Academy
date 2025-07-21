@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - DigitalSkills Academy</title>
+  <link rel="stylesheet" href="gallery.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">DigitalSkills Academy</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="testimonial.html">Testimonials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="inquiry.html">Inquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <h2>Gallery</h2>
+    <p>Have a look at our student achievements and workshops</p>
+  </section>
+
+  <section class="gallery-section">
+    <div class="container gallery-grid">
+      <div class="gallery-item" onclick="openModal('Workshop on Full-Stack Development', 'A hands-on session covering HTML, CSS, JavaScript, Java, MySQL, and deployment.')">
+        <img src="p1.jpg" alt="Workshop">
+        <p>Workshop</p>
+      </div>
+      <div class="gallery-item" onclick="openModal('Expert Mentoring Session', 'Weekly sessions with mentors for resume building, project guidance and placement support.')">
+        <img src="p2.jpeg" alt="Mentoring">
+        <p>Mentoring Session</p>
+      </div>
+      <div class="gallery-item" onclick="openModal('Hackathon 2025', 'A 24-hour event where teams compete to build real-world solutions.')">
+        <img src="p4.jpg" alt="Hackathon">
+        <p>Hackathon</p>
+      </div>
+      <div class="gallery-item" onclick="openModal('Capstone Projects', 'Final projects done by learners applying all the skills learned during the course.')">
+        <img src="p5.jpg" alt="Projects">
+        <p>Projects</p>
+      </div>
+      <div class="gallery-item" onclick="openModal('Team Training Activities', 'Interactive team learning sessions focused on collaboration and leadership.')">
+        <img src="p6.jpeg" alt="Team Training">
+        <p>Team Training</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="descriptionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 DigitalSkills Academy | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    function openModal(title, desc) {
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalDesc").innerText = desc;
+      document.getElementById("descriptionModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("descriptionModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("descriptionModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
